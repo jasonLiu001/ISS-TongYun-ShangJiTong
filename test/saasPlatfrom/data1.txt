@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Msg>
+  <Body>
+    <MsgSN>APP00001</MsgSN>
+    <EcOrderInfo>
+      <OPType>01</OPType>
+      <OPNote/>
+      <EcID>ff8080814955c7cf01495fa4a5f80144</EcID>
+      <EcInfo>
+        <OprType>01</OprType>
+        <EcName>测试103001</EcName>
+        <AdminAccount>15512341000</AdminAccount>
+        <AdminName>15512341000</AdminName>
+        <AdminSex>1</AdminSex>
+        <AdminPhone>15512341000</AdminPhone>
+        <AdminEmail>fsdf@sfdf.ge</AdminEmail>
+        <AdminAddr>天津市市辖区北辰区测试103001</AdminAddr>
+        <LinkmanName>测试103001</LinkmanName>
+        <LinkmanFax/>
+        <LinkmanEmail>fsdf@sfdf.ge</LinkmanEmail>
+        <LinkmanTel>15512341000</LinkmanTel>
+      </EcInfo>
+      <OrderInfo>
+        <OrderID>ff8080814955c7cf01495fbb376f0151</OrderID>
+        <OrderCode>ff8080814955c7cf01495fbb376f0151</OrderCode>
+        <ProdID>ff80808148a6eb8a0148a6f4b14e0017</ProdID>
+        <AppID>ff80808148a6eb8a0148a6f060150002</AppID>
+        <FeeType>ff8080814955c7cf01495fbb2126014c</FeeType>
+        <OrderStatus>2</OrderStatus>
+        <EffectDate>20141030</EffectDate>
+        <ExpiryDate>20141129</ExpiryDate>
+        <Memo>订购</Memo>
+      </OrderInfo>
+      <OpenInfoList>
+        <OpenInfo>
+          <ParamName>userNum</ParamName>
+          <ParamValue>5</ParamValue>
+          <ParamDesc>用户数</ParamDesc>
+          <Limit/>
+        </OpenInfo>
+      </OpenInfoList>
+    </EcOrderInfo>
+  </Body>
+</Msg>

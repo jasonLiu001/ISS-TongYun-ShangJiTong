@@ -1,0 +1,10 @@
+﻿.tabel-newslist{
+    margin-bottom:20px;
+}
+.tabel-newstitle{
+    background: url("../img/title_bgrepeat.png") repeat-x;
+    border-bottom: 1px solid #cfcfcf;
+    height:39px;
+    font-weight:bold;
+    
+}

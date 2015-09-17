@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<h1 id="h1Title"></h1>
+<h4 id="h4ResourceDate"></h4>
+<div id="content">
+</div>
+<script>
+
+    window.onload=function() {
+        startAjax();
+    }
+
+    function getQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]); return null;
+    }
+
+    var xmlHttp;
+    function createXMLHttpRequest() {
+        if (window.ActiveXObject) {
+            xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        else if (window.XMLHttpRequest) {
+            xmlHttp = new XMLHttpRequest();
+        }
+    }
+    var okFunc = function() {
+        if (xmlHttp.readyState == 4) {
+            if (xmlHttp.status == 200) {
+                var dataJson = JSON.parse(xmlHttp.responseText);
+
+                if(dataJson.success) {
+                    document.title = dataJson.data.title;
+                    document.getElementById("h1Title").innerText = dataJson.data.title;
+                    document.getElementById("h4ResourceDate").innerText = dataJson.data.sourceAddress + "   " + dataJson.data.publishedDate;
+                    document.getElementById("content").innerHTML = dataJson.data.body;
+                }else {
+                    document.getElementById("content").innerText = dataJson.errorMsg;
+                }
+            }
+        }
+    }
+    var startAjax = function() {
+        var url = "android/getDetailInfo/";
+
+        var type = getQueryString("type");
+        var id = getQueryString("id");
+        url += type + "?id=" + id;
+
+        createXMLHttpRequest();
+        if (!xmlHttp) {
+            return alert('create failed');
+        }
+        xmlHttp.open("Get", url, true);
+        xmlHttp.onreadystatechange = okFunc;
+        xmlHttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xmlHttp.send(document);
+    }
+
+
+</script>
+</body>
+</html>
